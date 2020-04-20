@@ -20,6 +20,22 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+<<<<<<< HEAD
+=======
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/content`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/content`,
+      },
+    },
+>>>>>>> 1010841... Create content index page
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
