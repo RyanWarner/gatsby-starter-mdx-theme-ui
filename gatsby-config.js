@@ -5,6 +5,12 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/content`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-mdx`,
     {
