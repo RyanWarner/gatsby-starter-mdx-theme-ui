@@ -1,8 +1,7 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
 export default ({ data }) => {
-  console.log('data', data)
   const { edges } = data.allMdx
 
   return (
@@ -10,7 +9,9 @@ export default ({ data }) => {
       <h1>Content</h1>
       <ul>
         {edges.map(item => (
-          <li>{item.node.frontmatter.title}</li>
+          <Link to={item.node.fields.slug}>
+            <li>{item.node.frontmatter.title}</li>
+          </Link>
         ))}
       </ul>
     </>
@@ -29,6 +30,9 @@ export const pageQuery = graphql`
           id
           frontmatter {
             title
+          }
+          fields {
+            slug
           }
         }
       }
